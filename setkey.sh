@@ -2,6 +2,8 @@ chosekey () {
 
     counterzenpen=0
 
+    echo
+
     echo "Kindly Choose the Key you would like to use"
 
     for i in ${keysIndexarray[@]}
@@ -14,15 +16,19 @@ chosekey () {
 
     done
 
+    echo
+
     read indexChoice
 
     ((indexChoice--))
 
     key=${allStringarray[keysIndexarray[indexChoice]]:8:16}
 
+    echo
     echo $key "is your choice"
-
+    echo
     echo "is it final (1 for yes 2 for no) ?"
+    echo
 
     read finalchoice
 
@@ -59,9 +65,9 @@ if [ $choice -eq 1 ]
 
 then
 
-    echo "Let's try to make a new key !!!"
-
     echo
+
+    echo "Let's try to make a new key !!!"
 
     echo "Key-Type: default" > key.txt
 
@@ -138,7 +144,11 @@ then
 
         do 
 
+            echo
+
             echo "Please enter your Full Name ;)"
+
+            echo
 
             read name
 
@@ -151,8 +161,12 @@ then
                 break
 
             else
+                
+                echo
 
                 echo "Wrong format please try again (only Alpha numeric along with . _ - and space are allowed)"
+
+                echo
 
                 continue
             
@@ -164,7 +178,11 @@ then
 
         do 
 
+            echo
+
             echo "Please enter your Email Id :)"
+
+            echo
 
             read email
 
@@ -178,7 +196,11 @@ then
 
             else
 
+                echo
+                
                 echo "Wrong format please try again (only *@*.com or *@*.in are allowed)"
+
+                echo
 
                 continue
             
@@ -233,7 +255,11 @@ then
 
         else
 
+            echo
+
             echo "Sorry this username and id are already in use"
+
+            echo
 
         fi
 
@@ -243,7 +269,11 @@ then
 
     do 
 
-         echo "Please enter the comment !!"
+        echo
+        
+        echo "Please enter the comment !!"
+
+        echo
 
         read comment       
 
@@ -263,8 +293,11 @@ then
 
     done    
 
+    echo
 
     echo "Please enter the pass phrase"
+
+    echo
 
     echo "%ask-passphrase" >> key.txt
 
@@ -276,6 +309,7 @@ then
 
 else
 
+    echo
     echo "Let's choose the key !!"
     echo
 
@@ -375,6 +409,9 @@ then
     echo
     
     echo "Kinldy setup this key on your github using this"
+
+    echo
+    echo
 
     gpg --armor --export $key
 
